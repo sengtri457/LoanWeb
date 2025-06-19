@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row text-center p-3">
+        <h2>----- Loan Schedule -----</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Interest</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{price}}</td>
+                <td>{{duration}}</td>
+                <td>{{interestRate}}%</td>
+                <td>{{DateTime | date:'yyyy-MM-dd'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1" class="table mt-0">
+        <thead>
+            <tr class="tableheader">
+                <th>No</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (row of LoanList(); track row.no){
+            <tr [class.text-green]="row.no % 2 !== 0">
+                <td>{{ row.no }}</td>
+                <td>{{ row.principal }}</td>
+                <td>{{ row.interest }}</td>
+                <td>{{ row.total }}</td>
+            </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Total Interest</strong></td>
+                <td colspan="2">{{ totalInterest()}}</td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Grand Total</strong></td>
+                <td colspan="2">{{ grandTotal() }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
