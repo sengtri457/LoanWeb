@@ -3,12 +3,12 @@
         <h2>----- Loan Schedule -----</h2>
     </div>
     <table>
-        <thead>
+        <thead class="tableheader">
             <tr>
-                <th>Price</th>
-                <th>Duration</th>
-                <th>Interest</th>
-                <th>Date</th>
+                <th>តម្លៃ</th>
+                <th>រយះពេល</th>
+                <th>ការប្រាក់</th>
+                <th>កាលបរិច្ឆេទ</th>
             </tr>
         </thead>
         <tbody>
@@ -23,10 +23,10 @@
     <table border="1" class="table mt-0">
         <thead>
             <tr class="tableheader">
-                <th>No</th>
-                <th>Principal</th>
-                <th>Interest</th>
-                <th>Total</th>
+                <th>លេរៀង</th>
+                <th>តម្លៃថ្លៃដើម</th>
+                <th>ការប្រាក់</th>
+                <th>តម្លៃសរុប</th>
             </tr>
         </thead>
         <tbody>
@@ -40,12 +40,12 @@
             }
         </tbody>
         <tfoot>
-            <tr>
-                <td colspan="2"><strong>Total Interest</strong></td>
+            <tr class="tableheader">
+                <td colspan="2"><strong>ការប្រាក់សរុប</strong></td>
                 <td colspan="2">{{ totalInterest()}}</td>
             </tr>
-            <tr>
-                <td colspan="2"><strong>Grand Total</strong></td>
+            <tr class="tableheader">
+                <td colspan="2"><strong>តម្លៃសរុប</strong></td>
                 <td colspan="2">{{ grandTotal() }}</td>
             </tr>
         </tfoot>
