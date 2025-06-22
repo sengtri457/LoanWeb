@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+interface loanType {
+  no: number;
+  principal: number;
+  interest: number;
+  total: number;
+  status: string;
+  crrDate: string;
+}
 @Component({
   selector: 'app-loan',
   imports: [CommonModule],
@@ -16,10 +23,10 @@ export class Loan {
   interest = (this.price * this.interestRate) / 100;
   total = this.principal + this.interest;
   StausCheck: string = 'active';
-  DateTime = new Date();
-
+  currentDate = new Date('2023-05-08');
+  dateList: string[] = [];
   LoanList() {
-    let rows = [];
+    let rows: loanType[] = [];
     for (let i = 1; i <= this.duration; i++) {
       rows.push({
         no: i,
@@ -27,6 +34,7 @@ export class Loan {
         interest: this.interest,
         total: this.total,
         status: this.StausCheck,
+        crrDate: this.dateList[i - 1],
       });
     }
     return rows;
@@ -46,5 +54,17 @@ export class Loan {
       totalEnd += this.total;
     }
     return totalEnd;
+  }
+
+  Getdate() {
+    const newDateFormate = new Date(this.currentDate.getTime());
+    for (let i = 0; i < this.duration; i++) {
+      newDateFormate.setMonth(this.currentDate.getMonth() + i);
+      this.dateList.push(newDateFormate.toISOString().split('T')[0]);
+    }
+    console.log(this.dateList);
+  }
+  ngOnInit() {
+    this.Getdate();
   }
 }
