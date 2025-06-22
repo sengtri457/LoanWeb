@@ -36,12 +36,6 @@ At the bottom of the table:
 - The repayment is split into equal parts over 10 months.
 - Interest is calculated monthly and does not change.
 - This layout is useful for personal loan planning or creating similar schedules for financial tracking.
-
-## Preview
-
-You can view the schedule in the included image:  
-![Loan Schedule](./ef2eae8e-c8b8-46bb-a15a-24c45f506f03.png)
-
 ---
 
 Feel free to customize this `README.md` for your exact use case or add extra features like CSV exports, charts, or interactivity later.
