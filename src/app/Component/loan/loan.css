@@ -38,3 +38,17 @@ td {
     font-style: normal;
     color: dodgerblue;
 }
+
+h2,
+button,
+input {
+    font-family: "Dangrek", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.model-wrapper {
+    background-color: rgba(126, 126, 126, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+}
