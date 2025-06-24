@@ -77,6 +77,9 @@ export class Loan {
         draggable: true,
       });
     }
+    this.fixedValue = '';
+    this.fixValueInterest = '';
+    this.fixValueDuration = '';
   }
   totalInterest() {
     let sum = 0;
